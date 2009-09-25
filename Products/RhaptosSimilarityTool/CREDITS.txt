@@ -1,0 +1,4 @@
+Author: Brent Hendricks, Ross Reedstrom
+
+Sponsor: The Connexions Project
+http://cnx.rice.edu
