@@ -1,24 +1,11 @@
+
 from Products.CMFCore.utils import getToolByName
-from StringIO import StringIO
-import string
 
-def install(self):
-    """Add the tool"""
-    out = StringIO()
+def install(portal):
+    portal_setup = getToolByName(portal, 'portal_setup')
+    import_context = portal_setup.getImportContextID()
+    portal_setup.setImportContext(
+            'profile-Products.RhaptosSimilarityTool:default')
+    portal_setup.runAllImportSteps()
+    portal_setup.setImportContext(import_context)
 
-    # Add the tool
-    urltool = getToolByName(self, 'portal_url')
-    portal = urltool.getPortalObject();
-    try:
-        portal.manage_delObjects('portal_similarity')
-        out.write("Removed old portal_similarity tool\n")
-    except:
-        pass  # we don't care if it fails
-    portal.manage_addProduct['RhaptosSimilarityTool'].manage_addTool('Similarity Tool', None)
-
-    # Register skins
-    
-    
-    out.write("Adding Similarity Tool\n")
-
-    return out.getvalue()
