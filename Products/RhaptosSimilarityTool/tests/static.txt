@@ -1,0 +1,23 @@
+Static Implementation Tests
+===========================
+ 	
+Let's just make sure that our static views are working as expected.
+	
+The first thing we need to do is to make sure the interfaces are
+being correctly implemented::
+ 	
+    >>> from Products.RhaptosSimilarityTool.SimilarityTool import SimilarityTool
+    >>> SimilarityTool.sqlInsertSimilar
+    <ZSQLFile at sqlInsertSimilar>
+    >>> SimilarityTool.sqlDeleteSimilar
+    <ZSQLFile at sqlDeleteSimilar>
+    >>> SimilarityTool.sqlInsertSimilarList
+    <ZSQLFile at sqlInsertSimilarList>
+    >>> SimilarityTool.sqlInsertSimilarList == '<ZSQLFile at sqlInsertSimilarList>'
+    False
+    >>> SimilarityTool.id == 'portal_similarity'
+    True
+    >>> SimilarityTool.meta_type == 'Similarity Tool'
+    True
+    >>> type(SimilarityTool.__implements__)
+    <class 'Interface._InterfaceClass.Interface'>
