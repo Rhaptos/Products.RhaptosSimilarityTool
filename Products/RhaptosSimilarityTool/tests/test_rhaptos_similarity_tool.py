@@ -26,17 +26,18 @@ $Id: $
 
 import Products.RhaptosSimilarityTool
 
-from Products.RhaptosTest import base
+from Products.RhaptosTest.base import RhaptosTestCase
 
 
-base.PRODUCTS_TO_LOAD_ZCML = [('configure.zcml', Products.RhaptosSimilarityTool),]
-base.PRODUCTS_TO_INSTALL = ['Products.RhaptosSimilarityTool',]
+class TestRhaptosSimilarityTool(RhaptosTestCase):
 
+    products_to_load_zcml = [('configure.zcml', Products.RhaptosSimilarityTool),]
 
-class TestRhaptosSimilarityTool(base.RhaptosTestCase):
+    def setUp(self):
+        RhaptosTestCase.setUp(self)
 
-    def test_pass(self):
-        assert 1 == 1
+    def test_similarity_tool(self):
+        self.assertEqual(1, 1)
 
 
 def test_suite():
