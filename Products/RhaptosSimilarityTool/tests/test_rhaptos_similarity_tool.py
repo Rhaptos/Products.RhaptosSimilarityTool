@@ -24,17 +24,21 @@ $Id: $
 """
 
 
+from Products.RhaptosTest import config
 import Products.RhaptosSimilarityTool
+config.products_to_load_zcml = [('configure.zcml', Products.RhaptosSimilarityTool),]
+config.products_to_install = ['RhaptosSimilarityTool']
 
-from Products.RhaptosTest.base import RhaptosTestCase
+from Products.RhaptosTest import base
 
 
-class TestRhaptosSimilarityTool(RhaptosTestCase):
+class TestRhaptosSimilarityTool(base.RhaptosTestCase):
 
-    products_to_load_zcml = [('configure.zcml', Products.RhaptosSimilarityTool),]
+    def afterSetUp(self):
+        pass
 
-    def setUp(self):
-        RhaptosTestCase.setUp(self)
+    def beforeTearDown(self):
+        pass
 
     def test_similarity_tool(self):
         self.assertEqual(1, 1)
