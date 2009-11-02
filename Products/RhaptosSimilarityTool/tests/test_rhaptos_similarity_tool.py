@@ -28,13 +28,17 @@ from Products.RhaptosTest import config
 import Products.RhaptosSimilarityTool
 config.products_to_load_zcml = [('configure.zcml', Products.RhaptosSimilarityTool),]
 config.products_to_install = ['RhaptosSimilarityTool']
+config.extension_profiles = ['Products.RhaptosSimilarityTool:default']
 
+from Products.CMFCore.utils import getToolByName
 from Products.RhaptosTest import base
 
 
 class TestRhaptosSimilarityTool(base.RhaptosTestCase):
 
     def afterSetUp(self):
+#        self.addProfile('Products.RhaptosSimilarityTool:default')
+#        self.similarity_tool = getToolByName(self.portal, 'portal_similarity')
         pass
 
     def beforeTearDown(self):
