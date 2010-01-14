@@ -1,0 +1,41 @@
+SimilarityTool-0.11
+  - change simobjs wrapper for cachability
+
+SimilarityTool-0.10.1
+  - Fix insert fix so it actually works
+  - Fix use of cookSearchTerms so it doesn't error (course publish only)
+
+SimilarityTool-0.10
+  - Fixup updates and inserts so they don't consume all memory 
+    (multi-command SQL statements are no longer a good idea)
+
+SimilarityTool-0.9
+  - Search improvements
+
+SimilarityTool-0.8
+  - i18n Translation Support
+
+SimilarityTool-0.7
+  - fix use of Title accessor function vs. title attribute
+  - fix similarity calcs to not return modules from catalog
+  - fix various characters that mquery2text doesn't like in keywords
+
+SimilarityTool-0.6
+  - Renamed RISA to Rhaptos
+
+SimilarityTool-0.5
+  - Updated with license info
+
+SimilarityTool-0.4
+  - Implement deleteSimilarity (requires new function in db)
+  - first use of Upgrades folder (and Extensions/Upgrade.py)
+
+SimilarityTool-0.3
+  - Catch and log errors when calculating similarity
+  - Fix bug when keywords have certain regular expression characters: .+*^$
+
+SimilarityTool-0.2
+  - Reimplemented with SQL storage of similarity
+
+SimilarityTool-0.1
+  - Initial release
