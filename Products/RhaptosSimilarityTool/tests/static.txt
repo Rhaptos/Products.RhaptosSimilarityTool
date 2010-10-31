@@ -19,5 +19,6 @@ being correctly implemented::
     True
     >>> SimilarityTool.meta_type == 'Similarity Tool'
     True
-    >>> type(SimilarityTool.__implements__)
-    <class 'Interface._InterfaceClass.Interface'>
+    >>> from zope.interface import implementedBy
+    >>> list(implementedBy(SimilarityTool))
+    [<class 'Interface._InterfaceClass.Interface'>]
