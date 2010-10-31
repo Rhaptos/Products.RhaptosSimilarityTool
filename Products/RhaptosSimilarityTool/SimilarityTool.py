@@ -15,7 +15,7 @@ from Products.CMFCore.utils import getToolByName
 from OFS.SimpleItem import SimpleItem
 from Globals import InitializeClass
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
-from Products.CMFCore.CMFCorePermissions import View, ManagePortal
+from Products.CMFCore.permissions import View, ManagePortal
 from Products.RhaptosModuleStorage.ZSQLFile import ZSQLFile
 from Products.ZCTextIndex.ParseTree import ParseError
 
