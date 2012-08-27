@@ -1,3 +1,6 @@
+SimilarityTool-0.13
+  - psycopg2 update (arrays are now returned as lists)
+
 SimilarityTool-0.12
   - generic setup refactor. Rhaptos 2.0 release
 
